@@ -5,6 +5,8 @@ import Link from "next/link"
 
 export default function page() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+    console.log(user);
+    
     return(
         <div className="bg-gray h-screen text-black">
             <h1 className="text-3xl font-bold mb-4 ml-4">Shopping List App</h1>
