@@ -3,7 +3,7 @@
 import { useUserAuth } from "./_utils/auth-context";
 import Link from "next/link"
 
-export default function page() {
+export default function Page() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
     console.log(user);
     
