@@ -1,29 +1,34 @@
-import Link from "next/link"
+"use client";
 
 export default function Contact() {
-  return<main>
+  return (
+    <main className="flex justify-center font-serif gap-20">
       <div>
-        <p>Get in Touch</p>
-        <h1>Contact Me</h1>
-        <div>
-          <div>
-            <img src="./email.png" alt="Email icon"/>
-            <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
-          </div>
-          <div>
-            <img src="./assets/linkedin.png" alt="LinkedIn icon"/>
-            <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-          </div>
+        <div className="font-bold text-black m-5 text-3xl">
+          <p>Contact Me</p>
         </div>
-      </div>
-      <div>
-        <div className="flex justify-center gap-10 text-3xl">
-          <p className="hover:text-gray-500 hover:underline"><Link href="week-2">About</Link></p>
-          <p className="hover:text-gray-500 hover:underline"><Link href="week-2">Skills</Link></p>
-          <p className="hover:text-gray-500 hover:underline"><Link href="week-2">Projects</Link></p>
-          <p className="hover:text-gray-500 hover:underline"><Link href="week-2">Contact</Link></p>
-          </div>
-          <p className="flex justify-center font-bold m-10 text-blue-700 text-2xl">Thank you for visit my portfolio</p>
+        <div className="flex justify-center font-bold text-gray-700  m-5 text-3xl">
+          <p>Via</p>
+        </div>
+        <p>Email: robel.chane@edu.sait.ca</p>
+        <p>Phone: +1(587) 834-5652</p>
+
+        <div className="flex justify-center gap-5 m-4 ">
+          <img
+            src={"/linkedin.png"}
+            alt="My LinkedIn profile"
+            onClick={() => window.location.href = 'https://linkedin.com/in/robel-chane-a1117a288/'}
+            className="w-10 h-10 rounded-full overflow-hidden hover:bg-gray-500"
+          />
+          <img
+            src={"/github.png"}
+            alt="My Github profile"
+            onClick={() => window.location.href = 'https://github.com/robelchane'}
+            className="w-10 h-10 rounded-full overflow-hidden hover:bg-gray-500"
+          />
+        </div>
+
       </div>
     </main>
+    );
 }
