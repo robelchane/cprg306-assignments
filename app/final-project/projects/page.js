@@ -6,7 +6,6 @@ import ProjectOne from "./projectOne";
 import ProjectTwo from "./projectTwo";
 import ProjectThree from "./projectThree";
 
-
 export default function Page() {
   return (
     <main className="font-serif">
