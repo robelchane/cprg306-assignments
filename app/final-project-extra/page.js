@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import MainScreen from './mainScreen';
 
-export default function page() {
+export default function Page() {
   const [gameStarted, setGameStarted] = useState(false);
 
   const startGame = () => {
