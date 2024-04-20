@@ -18,7 +18,7 @@ export default function ProjectOne() {
           <div className="text-black m-10 text-lg">
             <p>
                 My first project is word guessing game. word guessing app is 
-                a fun and interactive game designed to challenge players' 
+                a fun and interactive game designed to challenge players 
                 vocabulary and word-solving skills. I use react to design 
                 this app. Players must guess the correct word based on hints 
                 provided, such as the number of letters and a category clue.

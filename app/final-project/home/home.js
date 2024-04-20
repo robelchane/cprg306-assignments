@@ -9,7 +9,7 @@ export default function Home() {
 
       <div className="flex flex-col items-center justify-center font-serif">
         <div className="font-bold text-gray m-2 text-3x2">
-          <p>Hello, I'm</p>
+          <p>Hello, I am</p>
         </div>
         <div className="font-bold text-black m-4 text-4xl">
           <h1>Robel Chane</h1>

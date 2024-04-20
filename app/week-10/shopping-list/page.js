@@ -1,9 +1,10 @@
 "use client";
 
+import Link from 'next/link'; // Import Link component
 import ItemList from './item-list.js';
 import NewItem from "./new-item"
 import MealIdeas from './meal-ideas.js';
-import { getItems, addItem } from '../_services/shopping-list-service';
+import { getItems } from '../_services/shopping-list-service';
 import { useState, useEffect } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
@@ -31,28 +32,29 @@ export default function Page() {
     };
 
     useEffect(() => {
+        if (user) {
+          loadItems();
+        }
+    }, [user]);
+
+    // Ensure all useEffect are placed at the top level
+    useEffect(() => {
         loadItems();
     }, [user.uid]);
 
     if (!user) {
         return <Link href="/week8">Please log in to view the shopping list.</Link>
-      }
-    
-      useEffect(() => {
-        if (user) {
-          loadItems();
-        }
-      }, [user]);
+    }
 
     return (
-        <main className = "bg-slate-950">
+        <main className="bg-slate-950">
             <h1 className='pl-4 pt-4 text-3xl text-white font-extrabold'>Shopping List</h1>
             <div className="flex">
                 <div className="">
-            <NewItem onAddItem={handleAddItem}/>
-            <ItemList items={items} onItemSelect={handleItemSelect}/>
-            </div>
-            <MealIdeas ingredient={selectedItemName} />
+                    <NewItem onAddItem={handleAddItem}/>
+                    <ItemList items={items} onItemSelect={handleItemSelect}/>
+                </div>
+                <MealIdeas ingredient={selectedItemName} />
             </div>
         </main>
     )
