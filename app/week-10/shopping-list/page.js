@@ -14,15 +14,17 @@ export default function Page() {
     const { user } = useUserAuth();
     
     const loadItems = async () => {
-        const fetchedItems = await getItems(user.uid);
-        setItems(fetchedItems);
+        if (user && user.uid) { // Check if user and user.uid are both not null
+            const fetchedItems = await getItems(user.uid);
+            setItems(fetchedItems);
+        }
     };
 
     function handleItemSelect (newItem) {
         const newItemSplit = newItem.split(',');
         const newItemNoEmoji = newItemSplit[0].replace(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g, '');
         const newItemTrimmed = newItemNoEmoji.trim();
-       //console.log(newItemTrimmed);
+        
         setSelectedItemName(newItemTrimmed);
     };
 
@@ -39,7 +41,9 @@ export default function Page() {
 
     // Ensure all useEffect are placed at the top level
     useEffect(() => {
-        loadItems();
+        if (user && user.uid) {
+            loadItems();
+        }
     }, [user.uid]);
 
     if (!user) {
