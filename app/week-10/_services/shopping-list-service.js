@@ -1,5 +1,5 @@
 import { db } from "../_utils/firebase";
-import { collection, getDocs, addDoc, query, deleteItem } from "firebase/firestore";
+import { collection, getDocs, addDoc,  deleteItem } from "firebase/firestore";
 
 export async function getItems(userId) {
     const postSnapshot = await getDocs(collection(db, `users/${userId}/items`));
