@@ -4,7 +4,7 @@ import Home from "./home/home";
 import Link from "next/link"
 
 
-export default function Page() {
+export default function page() {
   return (
     <main className="font-serif">
       <div className="flex justify-between items-center m-10 text-2xl">
