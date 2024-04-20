@@ -2,7 +2,7 @@
 
 import Link from 'next/link'; // Import Link component
 import ItemList from './item-list.js';
-import NewItem from "./new-item"
+import NewItem from "./new-item";
 import MealIdeas from './meal-ideas.js';
 import { getItems } from '../_services/shopping-list-service';
 import { useState, useEffect } from "react";
@@ -24,7 +24,7 @@ export default function Page() {
         const newItemSplit = newItem.split(',');
         const newItemNoEmoji = newItemSplit[0].replace(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g, '');
         const newItemTrimmed = newItemNoEmoji.trim();
-        
+
         setSelectedItemName(newItemTrimmed);
     };
 
